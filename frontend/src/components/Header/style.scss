@@ -5,10 +5,11 @@
   .logo {
     display: flex;
     align-items: center;
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 
   .nav {
+    display: none;
     &-list {
       display: flex;
     }
@@ -16,7 +17,7 @@
       display: flex;
       align-items: center;
       margin: 10px;
-      font-size: 2rem;
+      font-size: 1.5rem;
       &.active {
         border-bottom: 4px solid var(--color-base);
       }
@@ -24,19 +25,13 @@
     &-item {
       margin: 0 5px;
     }
-    &-icon {
-      display: none;
-      margin-right: 5px;
-    }
   }
 }
 
 @media all and (min-width: 768px) {
   .header {
     .nav {
-      &-icon {
-        display: block;
-      }
+      display: block;
     }
   }
 }

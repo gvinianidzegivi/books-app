@@ -1,3 +1,4 @@
+import './style.scss';
 import { Fragment } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookComponent from './Book';

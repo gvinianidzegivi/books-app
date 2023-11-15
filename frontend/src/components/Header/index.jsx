@@ -5,28 +5,29 @@ const HeaderComponent = () => {
   return (
     <header className='header'>
       <Link className='logo' to='/'>
-        B📖📖KS
+        <span style={{ fontSize: '60px' }}>K</span>a
+        <span style={{ fontSize: '60px' }}>B</span>ooks
       </Link>
       <nav className='nav'>
         <ul className='nav-list'>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/'>
-              <span className='nav-icon'>🏠</span> Home
+              <span style={{ fontSize: '1em' }}>H</span>ome
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/books'>
-              <span className='nav-icon'>📚</span> Books
+              <span style={{ fontSize: '1em' }}>B</span>ooks
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/my-shelf'>
-              <span className='nav-icon'>🗃️</span> My Shelf
+              <span style={{ fontSize: '1em' }}>M</span>y Shelf
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/sign-in'>
-              <span className='nav-icon'>➡️</span> Sign In
+              <span style={{ fontSize: '1em' }}>S</span>ign In
             </NavLink>
           </li>
         </ul>
