@@ -21,7 +21,7 @@ const HeaderComponent = () => {
           </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/my-shelf'>
-              <span className='nav-icon'>🗃️</span> My Shelft
+              <span className='nav-icon'>🗃️</span> My Shelf
             </NavLink>
           </li>
           <li className='nav-item'>

@@ -1,5 +1,18 @@
+import { Fragment } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import BookComponent from './Book';
+
 const BooksPage = () => {
-  return <h1>Books</h1>;
+  const books = useLoaderData();
+  return (
+    <div className='books'>
+      {books.map((book) => (
+        <Fragment key={book._id}>
+          <BookComponent {...book} />
+        </Fragment>
+      ))}
+    </div>
+  );
 };
 
 export default BooksPage;

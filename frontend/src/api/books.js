@@ -8,7 +8,25 @@ export const apiGetBooks = async () => {
 
   try {
     const response = await axiosInstance(axiosOptions);
-    return response;
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const apiGetBook = async (req) => {
+  const { id } = req.params;
+
+  console.log(req.params);
+
+  const axiosOptions = {
+    url: '/books/' + id,
+    method: 'get',
+  };
+
+  try {
+    const response = await axiosInstance(axiosOptions);
+    return response.data;
   } catch (error) {
     throw error;
   }
