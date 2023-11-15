@@ -1,11 +1,19 @@
 const Book = require('../../models/book.js');
 
-console.log(Book.find());
-
 const getBooks = async (req, res) => {
   try {
     const books = await Book.find();
-    res.status(200).json({ books });
+    res.status(200).json(books);
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getBook = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findById(id);
+    res.status(200).json(book);
   } catch (error) {
     throw error;
   }
@@ -15,9 +23,10 @@ const addBook = async (req, res) => {
   try {
     const body = req.body;
     const book = new Book({
-      name: body.name,
-      description: body.description,
-      status: body.status,
+      title: body.title,
+      author: body.author,
+      anotation: body.anotation,
+      img_url: body.img_url,
     });
 
     const newBook = await book.save();
@@ -63,4 +72,4 @@ const deleteBook = async (req, res) => {
   }
 };
 
-module.exports = { getBooks, addBook, updateBook, deleteBook };
+module.exports = { getBooks, getBook, addBook, updateBook, deleteBook };

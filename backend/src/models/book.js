@@ -6,14 +6,17 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
-
     author: {
       type: String,
       required: true,
     },
     anotation: {
       type: String,
-      required: true,
+      required: false,
+    },
+    img_url: {
+      type: String,
+      required: false,
     },
   },
   { timestamps: true }

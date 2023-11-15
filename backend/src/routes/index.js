@@ -4,13 +4,14 @@ const {
   addBook,
   updateBook,
   deleteBook,
+  getBook,
 } = require('../controllers/books/books');
-
-console.log('getBooks');
 
 const router = Router();
 
 router.get('/books', getBooks);
+
+router.get('/books/:id', getBook);
 
 router.post('/add-book', addBook);
 
