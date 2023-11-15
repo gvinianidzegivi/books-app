@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+  }
+
+  .nav {
+    &-list {
+      display: flex;
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      font-size: 2rem;
+      &.active {
+        border-bottom: 4px solid var(--color-base);
+      }
+    }
+    &-item {
+      margin: 0 5px;
+    }
+    &-icon {
+      display: none;
+      margin-right: 5px;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .header {
+    .nav {
+      &-icon {
+        display: block;
+      }
+    }
+  }
+}
