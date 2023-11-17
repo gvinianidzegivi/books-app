@@ -72,4 +72,21 @@ const deleteBook = async (req, res) => {
   }
 };
 
-module.exports = { getBooks, getBook, addBook, updateBook, deleteBook };
+const searchBook = async (req, res) => {
+  const { query } = req.query;
+
+  const result = await Book.find({
+    title: { $regex: query, $options: 'i' },
+  });
+
+  res.status(200).json(result);
+};
+
+module.exports = {
+  getBooks,
+  getBook,
+  addBook,
+  updateBook,
+  deleteBook,
+  searchBook,
+};
