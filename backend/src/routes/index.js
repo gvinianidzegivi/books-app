@@ -20,6 +20,4 @@ router.put('/edit-book/:id', updateBook);
 
 router.delete('/delete-book/:id', deleteBook);
 
-router.get('/search', searchBook);
-
 module.exports = router;

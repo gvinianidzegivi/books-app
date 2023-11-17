@@ -2,7 +2,10 @@ const Book = require('../../models/book.js');
 
 const getBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    const { query } = req.query;
+    const books = await Book.find({
+      title: { $regex: query || '', $options: 'i' },
+    });
     res.status(200).json(books);
   } catch (error) {
     throw error;
@@ -72,21 +75,10 @@ const deleteBook = async (req, res) => {
   }
 };
 
-const searchBook = async (req, res) => {
-  const { query } = req.query;
-
-  const result = await Book.find({
-    title: { $regex: query, $options: 'i' },
-  });
-
-  res.status(200).json(result);
-};
-
 module.exports = {
   getBooks,
   getBook,
   addBook,
   updateBook,
   deleteBook,
-  searchBook,
 };
