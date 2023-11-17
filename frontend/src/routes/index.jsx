@@ -1,6 +1,5 @@
 import { Route, createBrowserRouter } from 'react-router-dom';
 import RootLayout from '../layouts/Root';
-import HomePage from '../pages/Home';
 import BooksPage from '../pages/Books';
 import SignInPage from '../pages/SignIn';
 import { apiGetBook, apiGetBooks } from '../api/books';
@@ -13,7 +12,8 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <BooksPage />,
+        loader: apiGetBooks,
       },
       {
         path: 'books',

@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import BookComponent from './Book';
 
 const BooksPage = () => {
-  const books = useLoaderData();
+  const books = useLoaderData({ title: 'sasd' });
   return (
     <div className='books'>
       {books.map((book) => (

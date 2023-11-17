@@ -1,20 +1,17 @@
+import SearchComponent from '../Search';
 import './style.scss';
 import { Link, NavLink } from 'react-router-dom';
 
 const HeaderComponent = () => {
   return (
     <header className='header'>
-      <Link className='logo' to='/'>
+      <Link className='logo' to='/books'>
         Ka
         <span style={{ fontSize: '60px' }}>B</span>ook
       </Link>
+      <SearchComponent />
       <nav className='nav'>
         <ul className='nav-list'>
-          <li className='nav-item'>
-            <NavLink className='nav-link' to='/'>
-              <span style={{ fontSize: '2em' }}>H</span>ome
-            </NavLink>
-          </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/books'>
               <span style={{ fontSize: '2em' }}>B</span>ooks
