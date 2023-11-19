@@ -4,6 +4,7 @@ import BooksPage from '../pages/Books';
 import SignInPage from '../pages/SignIn';
 import { apiGetBook, apiGetBooks } from '../api/books';
 import BookDetailPage from '../pages/Books/Detail';
+import HomePage from '../pages/Home';
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <BooksPage />,
-        loader: apiGetBooks,
+        element: <HomePage />,
       },
       {
         path: 'books',

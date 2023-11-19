@@ -1,16 +1,23 @@
-import { useRef, useState } from 'react';
-import { Form, useSearchParams, useSubmit } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import {
+  Form,
+  useSearchParams,
+  useSubmit,
+  redirect,
+  useNavigation,
+  useNavigate,
+} from 'react-router-dom';
 
 const SearchComponent = () => {
   const searchRef = useRef(null);
   const [searchParams, setSearchParams] = useSearchParams('query');
   const submit = useSubmit();
+  const navigate = useNavigate();
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const query = searchRef.current.value;
-    if (!query) return;
-    setSearchParams({ query });
+    return query ? setSearchParams({ query }) : setSearchParams({});
   };
 
   return (
