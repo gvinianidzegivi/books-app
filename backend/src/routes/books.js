@@ -10,8 +10,8 @@ const {
 
 const router = Router();
 
-router.get('/books', getBooks);
-router.get('/books/:id', getBook);
+router.get('/', getBooks);
+router.get('/:id', getBook);
 router.post('/add-book', addBook);
 router.put('/edit-book/:id', updateBook);
 router.delete('/delete-book/:id', deleteBook);

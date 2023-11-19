@@ -5,7 +5,7 @@ const books = require('./books');
 
 const rootRouter = Router();
 
-rootRouter.use('/auth', auth);
 rootRouter.use('/books', books);
+rootRouter.use('/auth', auth);
 
 module.exports = rootRouter;
