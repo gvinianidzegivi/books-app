@@ -1,7 +1,12 @@
+require('../src/configs/db').connect();
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const routes = require('./routes/index.js');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const rootRouter = require('./routes/index.js');
 
 const PORT = process.env.PORT || 8080;
 
@@ -13,17 +18,6 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use(routes);
+app.use('/', rootRouter);
 
-const URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qd4atpl.mongodb.net/`;
-
-mongoose
-  .connect(URI)
-  .then(() =>
-    app.listen(PORT, () =>
-      console.log(`The server running on http://localhost:${PORT}`)
-    )
-  )
-  .catch((error) => {
-    throw error;
-  });
+app.listen(PORT, console.log(`App is listening on PORT: ${PORT}`));
