@@ -17,7 +17,13 @@ const SearchComponent = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const query = searchRef.current.value;
-    return query ? setSearchParams({ query }) : setSearchParams({});
+    if (query) {
+      setSearchParams({ query });
+      navigate(`/books?query=${query}`);
+      searchRef.current.value = '';
+    } else {
+      setSearchParams({});
+    }
   };
 
   return (
